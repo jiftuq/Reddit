@@ -12,7 +12,7 @@ function renderList(json) {
 }
 
 async function fetchTopFive(sub) {
-  const URL = `https://www.reddit.com/r/${sub}/top/.json?limit=5`;
+  const URL = `https://www.reddit.com/r/${sub}/top/.json?limit=20`;
   try {
     const fetchResult = fetch(new Request(URL, { method: 'GET', cache: 'reload' }));
     const response = await fetchResult;
