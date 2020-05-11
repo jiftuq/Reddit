@@ -11,7 +11,7 @@ function renderList(json) {
   </ol>`;
 }
 
-async function fetchTopFive(sub) {
+async function fetchTopTwenty(sub) {
   const URL = `https://www.reddit.com/r/${sub}/top/.json?limit=20`;
   try {
     const fetchResult = fetch(new Request(URL, { method: 'GET', cache: 'reload' }));
@@ -28,5 +28,5 @@ async function fetchTopFive(sub) {
 }
 
 button.addEventListener('click', () => {
-  fetchTopFive(subInput.value);
+  fetchTopTwenty(subInput.value);
 });
